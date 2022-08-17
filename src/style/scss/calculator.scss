@@ -1,0 +1,83 @@
+
+.calculator{
+    width: 500px;
+    height: 700px;
+    border-radius: 1rem;
+    background-color: bisque;
+    border:3px solid rgb(5, 5, 5);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    &_title{
+        height: 3rem;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &_input{
+        width: calc(100% - 1rem);
+        height: 10rem;
+        font-size: 7.1rem;
+        padding-left: 0.5rem;       
+        border: 2px solid black;
+        border-radius: 0.4rem;
+        background-color: rgb(51, 51, 51);
+        display: flex;
+        align-items:center ;
+        font-family: 'input';
+        pointer-events: none;
+        cursor: default;
+        transition: all 0.5s;
+    }
+    &_keyboard{
+        width: 100%;
+        margin-top: 2rem;
+        height: 100%    ;        
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: rgb(219, 197, 170);   
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;  
+        font-family: 'keyboard';
+        .key-number{
+            background-color: rgb(231, 228, 16);
+        }
+        .key-on{
+            background-color: rgba(2, 54, 2, 0.486);
+        }
+        .key-equal{
+            background-color: white;
+        }
+        span{
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            margin: 1rem;
+            font-size: 3rem;
+            font-weight: 900;
+            background-color: rgb(196, 164, 164);
+            cursor: pointer;           
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 1px, 
+                        rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, 
+                        rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+                        
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+            &:hover{
+                box-shadow: 0 0 0,
+                          rgba(6, 24, 44, 0.4) 0px 0px 0px 1px, 
+                          rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, 
+                          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                          
+            }
+        }
+    }
+}
+.input-on{
+    transition: all 0.5s;
+    background-color: grey;
+}
