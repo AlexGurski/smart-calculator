@@ -1,5 +1,6 @@
 .calculator {
   width: 500px;
+  max-width: calc(100vw - 5rem);
   height: 700px;
   border-radius: 1rem;
   background-color: bisque;
@@ -26,7 +27,6 @@
           justify-content: space-between;
 }
 .calculator_input {
-  width: calc(100% - 1rem);
   height: 10rem;
   font-size: 7.1rem;
   padding-left: 0.5rem;
@@ -50,7 +50,6 @@
           justify-content: right;
 }
 .calculator_keyboard {
-  width: 100%;
   margin-top: 2rem;
   height: 100%;
   display: grid;

@@ -35,7 +35,34 @@ const reverseNumber = (num) =>{
 }
 
 const checkSymbal = (string, symbal) =>{
+  if (string[string.length-1]===".") return string+"0"+symbal
   return string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'|| string.length===0?string:string+symbal
+}
+
+const checkDoubleZero = (string) =>{
+  if ((string[string.length-1]==0) && (string[string.length-2]==undefined || string[string.length-2]==='+' || string[string.length-2]==='-'|| string[string.length-2]==='/'|| string[string.length-2]==='×')){ 
+    return string
+  }
+  if (string[string.length-1]==undefined){
+    return "0"
+  }
+  if (string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'){
+    return string+"0"
+  }
+  return string+"00"
+}
+const checkZero = (string) =>{
+  if ((string[string.length-1]==0) && (string[string.length-2]==undefined || string[string.length-2]==='+' || string[string.length-2]==='-'|| string[string.length-2]==='/'|| string[string.length-2]==='×')){ 
+    return string
+  }
+  return string+"0"
+}
+const checkDoth = (string) => {
+  if (string[string.length-1]==undefined || string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'){ 
+    return string+"0."
+  }
+  //тут написать обработчик для того что бы в числе не было двух точек
+ return string+'.'
 }
 
 const App = ()=> {
@@ -76,9 +103,9 @@ const App = ()=> {
       <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >8</span>
       <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >9</span>
       <span onClick={(e)=>calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>+</span>
-      <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >0</span>
-      <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >00</span>
-      <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >.</span>
+      <span onClick={(e)=>calc?setInput(checkZero(input)):null} className='key-number' >0</span>
+      <span onClick={(e)=>calc?setInput(checkDoubleZero(input)):null} className='key-number' >00</span>
+      <span onClick={(e)=>calc?setInput(checkDoth(input)):null} className='key-number' >.</span>
       <span className='key-equal'>=</span>      
     </div>
    </div>
