@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style/css/global.css'
-import Calculator from './calculator';
-
+import Calculator from './components/calculator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

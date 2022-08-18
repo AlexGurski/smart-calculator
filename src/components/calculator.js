@@ -1,68 +1,9 @@
 import { useRef, useState } from 'react';
-import './style/css/calculator.css'
+import  {checkDoth, checkDoubleZero, checkSymbal, checkZero, reverseNumber} from '../module/calculatorModule'
+import '../style/css/calculator.css'
 
 const onCalc = (active) =>{  
   active.current.classList.toggle('input-on')
-}
-
-const reverseNumber = (num) =>{  
-  if (num!==''){
-    let ind = Math.max.apply(null,[num.lastIndexOf('+'), num.lastIndexOf('-'), num.lastIndexOf('×'), num.lastIndexOf('/')])
-    let buf= ind>1?num.slice(ind+1):ind
-    let rez = ind>1?num.slice(0,ind+1):ind  
-    if (num[buf]==='-' && ind===0){
-      return num.slice(1)
-    }
-    if(ind===-1){
-      return "-"+num
-    }
-    if(rez[rez.length-1]==="+"){
-      
-      return rez.slice(0,rez.length-1) +'-'+ buf
-    }
-    if(rez[rez.length-1]==="-"){
-      if(rez[rez.length-2]==="/" || rez[rez.length-2]==="×"){
-        return rez.slice(0,rez.length-1) + buf
-      }
-      return rez.slice(0,rez.length-1) +'+'+ buf
-    }
-    if((rez[rez.length-1]==="/" || rez[rez.length-1]==="×")&&buf.length>0 ){
-      return rez +'-'+ buf
-    }
-    return num
-  }
-  return ''
-}
-
-const checkSymbal = (string, symbal) =>{
-  if (string[string.length-1]===".") return string+"0"+symbal
-  return string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'|| string.length===0?string:string+symbal
-}
-
-const checkDoubleZero = (string) =>{
-  if ((string[string.length-1]==0) && (string[string.length-2]==undefined || string[string.length-2]==='+' || string[string.length-2]==='-'|| string[string.length-2]==='/'|| string[string.length-2]==='×')){ 
-    return string
-  }
-  if (string[string.length-1]==undefined){
-    return "0"
-  }
-  if (string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'){
-    return string+"0"
-  }
-  return string+"00"
-}
-const checkZero = (string) =>{
-  if ((string[string.length-1]==0) && (string[string.length-2]==undefined || string[string.length-2]==='+' || string[string.length-2]==='-'|| string[string.length-2]==='/'|| string[string.length-2]==='×')){ 
-    return string
-  }
-  return string+"0"
-}
-const checkDoth = (string) => {
-  if (string[string.length-1]==undefined || string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'){ 
-    return string+"0."
-  }
-  //тут написать обработчик для того что бы в числе не было двух точек
- return string+'.'
 }
 
 const App = ()=> {
