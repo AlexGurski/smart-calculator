@@ -60,15 +60,31 @@ const App = ()=> {
    </div>
    :
    <div className='container hangman'>
-    <div className='hangman_canvas'>
-    </div>
-    <div className='hangman_quiz'>
-          <div className='hangman_quiz_input'>
-          </div>
-          <div className='hangman_quiz_button'>
-            {calculation}
-          </div>          
-    </div>
+      <div className='hangman_canvas'>
+      </div>
+      <div className='hangman_quiz'>
+            <div className='hangman_quiz_input'>
+            { calculation.split('').map(sym=><span className='hangman_quiz_input_symbal'>{sym}</span>)}
+            </div>
+            <div className='hangman_quiz_buttons'>
+              <div className='hangman_quiz_buttons_container'>
+                <span className='hangman_quiz_buttons_element'>0</span>
+                <span className='hangman_quiz_buttons_element'>1</span>
+                <span className='hangman_quiz_buttons_element'>2</span>
+                <span className='hangman_quiz_buttons_element'>3</span>
+                <span className='hangman_quiz_buttons_element'>4</span>
+                <span className='hangman_quiz_buttons_element'>5</span>                
+              </div>
+              <div className='hangman_quiz_buttons_container'>
+                <span className='hangman_quiz_buttons_element'>6</span>
+                <span className='hangman_quiz_buttons_element'>7</span>
+                <span className='hangman_quiz_buttons_element'>8</span>
+                <span className='hangman_quiz_buttons_element'>9</span>
+                <span className='hangman_quiz_buttons_element'>.</span>
+                <span className='hangman_quiz_buttons_element'>-</span>
+              </div>
+            </div>          
+      </div>
     
    </div>
    
