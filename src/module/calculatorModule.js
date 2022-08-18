@@ -1,16 +1,15 @@
 export const reverseNumber = (num) =>{  
     if (num!==''){
       let ind = Math.max.apply(null,[num.lastIndexOf('+'), num.lastIndexOf('-'), num.lastIndexOf('×'), num.lastIndexOf('/')])
-      let buf= ind>1?num.slice(ind+1):ind
-      let rez = ind>1?num.slice(0,ind+1):ind  
+      let buf= ind>0?num.slice(ind+1):ind
+      let rez = ind>0?num.slice(0,ind+1):ind 
       if (num[buf]==='-' && ind===0){
         return num.slice(1)
       }
       if(ind===-1){
         return "-"+num
       }
-      if(rez[rez.length-1]==="+"){
-        
+      if(rez[rez.length-1]==="+"){        
         return rez.slice(0,rez.length-1) +'-'+ buf
       }
       if(rez[rez.length-1]==="-"){
@@ -54,6 +53,7 @@ export const reverseNumber = (num) =>{
     if (string[string.length-1]==undefined || string[string.length-1]==='+' || string[string.length-1]==='-'|| string[string.length-1]==='/'|| string[string.length-1]==='×'){ 
       return string+"0."
     }
+    
   let ind = Math.max.apply(null,[string.lastIndexOf('+'), string.lastIndexOf('-'), string.lastIndexOf('×'), string.lastIndexOf('/')])
   let buf= ind>1?string.slice(ind+1):string
    if (ind===-1 && buf.indexOf('.')===-1){

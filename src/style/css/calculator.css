@@ -1,7 +1,4 @@
 .calculator {
-  width: 500px;
-  max-width: calc(100vw - 5rem);
-  height: 700px;
   border-radius: 1rem;
   background-color: bisque;
   border: 3px solid rgb(5, 5, 5);

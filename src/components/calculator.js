@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import  {checkDoth, checkDoubleZero, checkSymbal, checkZero, reverseNumber} from '../module/calculatorModule'
 import { calculating } from '../module/calculation';
 import '../style/css/calculator.css'
+import '../style/css/hangman.css'
 
 const onCalc = (active) =>{  
   active.current.classList.toggle('input-on')
@@ -11,10 +12,15 @@ const App = ()=> {
   const inputs = useRef();
   const [calc,setCalc] = useState(false)
   const [input,setInput] = useState("")
-  const [calculation, setCalculation]=useState(0)
+  const [calculation, setCalculation]=useState(false)
 
-  return (
-   <div className="calculator">
+  useEffect(()=>{
+    console.log(calculation)
+  },[calculation])
+
+  return (   
+    calculation===false || calculation===""?
+    <div className="calculator container">
     <div className='calculator_title'>
       <span>SUPER SMART CALCULATOR</span>
       <span>Alexandr Gurski</span>
@@ -52,6 +58,21 @@ const App = ()=> {
       <span onClick={()=>calc?setCalculation(calculating(input)):null}className='key-equal'>=</span>      
     </div>
    </div>
+   :
+   <div className='container hangman'>
+    <div className='hangman_canvas'>
+    </div>
+    <div className='hangman_quiz'>
+          <div className='hangman_quiz_input'>
+          </div>
+          <div className='hangman_quiz_button'>
+            {calculation}
+          </div>          
+    </div>
+    
+   </div>
+   
+
   );
 }
 

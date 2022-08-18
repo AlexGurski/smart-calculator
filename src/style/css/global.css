@@ -29,3 +29,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.container {
+  width: 500px;
+  max-width: calc(100vw - 5rem);
+  height: 700px;
+}
