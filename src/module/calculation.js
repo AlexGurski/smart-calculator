@@ -37,9 +37,9 @@ const plusOrMinus = (string, ind) => {
     let left = betweenLeft(string.slice(0,ind))
     let right = betweenRight(string.slice(ind+1))
     if (string[ind]==='+'){
-        return string.replace(left+'+'+right, (+left + +right).toFixed(3))
+        return string.replace(left+'+'+right, (+left + +right).toFixed(5))
     } else{
-        return string.replace(left+'-'+right, (left-right).toFixed(3))
+        return string.replace(left+'-'+right, (left-right).toFixed(5))
     }
 }
 const plusAndMinus = (string)=>{
