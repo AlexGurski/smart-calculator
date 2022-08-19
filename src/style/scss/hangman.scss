@@ -19,14 +19,13 @@
         height: 55%;
         width: 100%;
         display: flex;
-        flex-direction: column;   
-        margin-top: 2rem;   
+        flex-direction: column; 
+        justify-content: space-around;  
         &_input{
             width: 100%;
             display: flex;
             justify-content: center;
-            &_symbal{            
-                
+            &_symbal{          
                 font-size: 2rem;
                 background: repeating-linear-gradient(
                     45deg,
@@ -47,7 +46,7 @@
         &_buttons{
             display: flex;
             flex-direction: column;
-            margin-top: 5rem;
+            
             &_container{
                 width: 100%;
                 display: flex;
@@ -75,7 +74,29 @@
             }
         }
     }
-   
+   &_dead{
+    color:red;
+    font-family: 'dead';
+    font-size: 9rem;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    @media screen and (max-width:500px){
+        font-size: 8rem;
+    }
+    @media screen and (max-width:450px){
+        font-size: 7rem;
+    }
+    @media screen and (max-width:400px){
+        font-size: 6rem;
+    }
+    @media screen and (max-width:400px){
+        font-size: 5.5rem;
+    }
+    @media screen and (max-width:325px){
+        font-size: 5rem;
+    }
+   }
 }
 
 .hangman_closed{

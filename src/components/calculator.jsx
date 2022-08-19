@@ -14,7 +14,6 @@ export const Calculator = ({calulatorResult})=> {
   const [input,setInput] = useState("")
 
   useEffect(()=>{
-    console.log(inputs.current.offsetWidth-45)
     console.log(inputContainer.current.offsetWidth)
   },[input])
  
@@ -43,23 +42,23 @@ export const Calculator = ({calulatorResult})=> {
             {!calc?'ON':'OFF'}
         </span>
         <span onClick={()=>setInput(input.slice(0,-1))} >←</span>
-        <span onClick={()=>setInput(reverseNumber(input))}>+/-</span> 
-        <span onClick={(e)=>calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>×</span>         
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number'>1</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number'>2</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >3</span>
-        <span onClick={(e)=>calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>/</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >4</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >5</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >6</span>      
-        <span onClick={(e)=>calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>-</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >7</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >8</span>
-        <span onClick={(e)=>calc?setInput(input+e.target.innerHTML):null} className='key-number' >9</span>
-        <span onClick={(e)=>calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>+</span>
-        <span onClick={()=>calc?setInput(checkZero(input)):null} className='key-number' >0</span>
-        <span onClick={()=>calc?setInput(checkDoubleZero(input)):null} className='key-number' >00</span>
-        <span onClick={()=>calc?setInput(checkDoth(input)):null} className='key-number' >.</span>
+        <span onClick={()=>inputs.current.offsetWidth-11 > inputContainer.current.offsetWidth ? setInput(reverseNumber(input)):null}>+/-</span> 
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>×</span>         
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number'>1</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number'>2</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >3</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>/</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >4</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >5</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >6</span>      
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>-</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >7</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >8</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(input+e.target.innerHTML):null} className='key-number' >9</span>
+        <span onClick={(e)=>inputs.current.offsetWidth-30 > inputContainer.current.offsetWidth && calc?setInput(checkSymbal(input,e.target.innerHTML)):null}>+</span>
+        <span onClick={()=>inputs.current.offsetWidth-33 > inputContainer.current.offsetWidth && calc?setInput(checkZero(input)):null} className='key-number' >0</span>
+        <span onClick={()=>inputs.current.offsetWidth-66 > inputContainer.current.offsetWidth && calc?setInput(checkDoubleZero(input)):null} className='key-number' >00</span>
+        <span onClick={()=>inputs.current.offsetWidth-12 > inputContainer.current.offsetWidth && calc?setInput(checkDoth(input)):null} className='key-number' >.</span>
         <span onClick={()=>calc?calulatorResult(calculating(input)):null}className='key-equal'>=</span>      
       </div>
    </div>  

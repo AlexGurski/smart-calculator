@@ -26,7 +26,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .hangman_quiz_input {
   width: 100%;
@@ -64,7 +65,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 5rem;
 }
 .hangman_quiz_buttons_container {
   width: 100%;
@@ -101,6 +101,39 @@
 .hangman_quiz_buttons_element:hover {
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.hangman_dead {
+  color: red;
+  font-family: "dead";
+  font-size: 9rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+}
+@media screen and (max-width: 500px) {
+  .hangman_dead {
+    font-size: 8rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .hangman_dead {
+    font-size: 7rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .hangman_dead {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .hangman_dead {
+    font-size: 5.5rem;
+  }
+}
+@media screen and (max-width: 325px) {
+  .hangman_dead {
+    font-size: 5rem;
+  }
 }
 
 .hangman_closed {

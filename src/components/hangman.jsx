@@ -30,6 +30,7 @@ const Hangman = ({result})=> {
   const quizList = useRef()
   const buttons = useRef()
   const hangmanPerson = useRef()
+  const dead = useRef()
 
   useEffect(()=>{
     let sum = answer.length>0?showTheNumber(answer, quizList.current.children, result):null
@@ -43,6 +44,7 @@ const Hangman = ({result})=> {
   useEffect(()=>{ 
     hangmanPerson.current.classList.add("hangman_procces"+rightToMistake)
     if (rightToMistake===0){
+      dead.current.style.opacity=1;
       buttons.current.classList.add('hangman_finish')
     }
   },[rightToMistake])
@@ -81,7 +83,7 @@ const Hangman = ({result})=> {
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element '>-</span>
               </div>
             </div>
-            <div> YOUR READ</div>             
+            <div className='hangman_dead' ref={dead}> YOUR DEAD</div>             
       </div>
        
    </div>  
