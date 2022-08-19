@@ -4,6 +4,7 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
     border-radius: 0.5rem;
     border: 2px solid black;
+   
     &_canvas{
         height: 45%;
         background-color: rgb(255, 227, 227);
@@ -22,7 +23,14 @@
             &_symbal{            
                 margin: 1rem;
                 font-size: 2rem;
-                background-color: rgb(116, 108, 108);
+                background: repeating-linear-gradient(
+                    45deg,
+                    #333333,
+                    #333333 25px,
+                    #000000 25px,
+                    #000000 50px
+                  );
+                  color:white;
                 width: 5rem;
                 height: 5rem;
                 display: flex;
@@ -63,4 +71,19 @@
         }
     }
    
+}
+
+.hangman_closed{
+    cursor: default;
+    --weight: 2px;
+    --aa: 1px; /* anti-aliasing */
+    --color: red;
+    background:
+    linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))),
+    linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
+    pointer-events: none;
+}
+
+.hangman_predicted{
+    background:gold;
 }

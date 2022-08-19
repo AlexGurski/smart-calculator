@@ -9,7 +9,7 @@ const App = ()=> {
     calculation===false || calculation===""?
     <Calculator calulatorResult={(e)=>{return setCalculation(e)}}/>
    :   
-    <Hangman result={calculation}/>
+    <Hangman result={calculation.split('')}/>
   );
 }
 

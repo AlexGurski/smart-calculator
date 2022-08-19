@@ -36,7 +36,9 @@
 .hangman_quiz_input_symbal {
   margin: 1rem;
   font-size: 2rem;
-  background-color: rgb(116, 108, 108);
+  background: -o-repeating-linear-gradient(45deg, #333333, #333333 25px, #000000 25px, #000000 50px);
+  background: repeating-linear-gradient(45deg, #333333, #333333 25px, #000000 25px, #000000 50px);
+  color: white;
   width: 5rem;
   height: 5rem;
   display: -webkit-box;
@@ -96,4 +98,18 @@
 .hangman_quiz_buttons_element:hover {
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.hangman_closed {
+  cursor: default;
+  --weight: 2px;
+  --aa: 1px; /* anti-aliasing */
+  --color: red;
+  background: -o-linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))), -o-linear-gradient(135deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
+  background: linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))), linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
+  pointer-events: none;
+}
+
+.hangman_predicted {
+  background: gold;
 }
