@@ -61,7 +61,7 @@ const Hangman = ({result})=> {
       </div>
       <div className='hangman_quiz'>
             <div className='hangman_quiz_input' ref={quizList}>
-            { result.map((sym,ind)=><span className='hangman_quiz_input_symbal' key={ind}>Х</span>)}
+             { result.map((sym,ind)=><span className='hangman_quiz_input_symbal' key={ind}>Х</span>)}
             </div>
             <div className='hangman_quiz_buttons' ref={buttons}>
               <div className='hangman_quiz_buttons_container'>                
@@ -80,8 +80,10 @@ const Hangman = ({result})=> {
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element'>.</span>
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element '>-</span>
               </div>
-            </div>          
-      </div>    
+            </div>
+            <div> YOUR READ</div>             
+      </div>
+       
    </div>  
   );
 }

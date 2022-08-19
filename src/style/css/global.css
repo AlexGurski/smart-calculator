@@ -11,6 +11,10 @@
   font-family: "keyboard";
   src: url(../../assets/fonts/19635.ttf);
 }
+@font-face {
+  font-family: "strict";
+  src: url(../../assets/fonts/strict.otf);
+}
 html {
   font-size: 10px;
 }
@@ -34,4 +38,5 @@ body {
   width: 500px;
   max-width: calc(100vw - 5rem);
   height: 700px;
+  max-height: 90vh;
 }

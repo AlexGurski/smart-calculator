@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import  {checkDoth, checkDoubleZero, checkSymbal, checkZero, reverseNumber} from '../module/calculatorModule'
 import { calculating } from '../module/calculation';
 import '../style/css/calculator.css'
@@ -9,8 +9,15 @@ const onCalc = (active) =>{
 
 export const Calculator = ({calulatorResult})=> {  
   const inputs = useRef();
+  const inputContainer = useRef();
   const [calc,setCalc] = useState(false)
   const [input,setInput] = useState("")
+
+  useEffect(()=>{
+    console.log(inputs.current.offsetWidth-45)
+    console.log(inputContainer.current.offsetWidth)
+  },[input])
+ 
 
   return (   
     <div className="calculator container">
@@ -18,7 +25,12 @@ export const Calculator = ({calulatorResult})=> {
         <span>SUPER SMART CALCULATOR</span>
         <span>Alexandr Gurski</span>
       </div>
-      <div className='calculator_input' ref={inputs}>{input}</div>
+      <div className='calculator_input' ref={inputs}>
+        <div className='calculator_input_container' ref={inputContainer}>
+          {input}
+        </div>
+        
+      </div>
       <div className='calculator_keyboard'>
         <span 
           onClick={()=>

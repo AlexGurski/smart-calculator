@@ -22,10 +22,40 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-family: "strict";
+}
+@media screen and (max-width: 435px) {
+  .calculator_title {
+    height: 2.5rem;
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 405px) {
+  .calculator_title {
+    height: 2rem;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 382px) {
+  .calculator_title {
+    height: 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 352px) {
+  .calculator_title {
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .calculator_title {
+    font-size: 0.8rem;
+  }
 }
 .calculator_input {
   height: 10rem;
-  font-size: 7.1rem;
+  font-size: 7rem;
   padding-left: 0.5rem;
   border: 2px solid black;
   border-radius: 0.4rem;
