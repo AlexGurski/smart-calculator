@@ -22,12 +22,14 @@ const showTheNumber = (answer, HTMLelement, array) =>{
   return rez
 }
 
-const Hangman = ({result})=> {  
-
+const Hangman = ({result})=> {
+//  console.log(result)
   const [rightToMistake, setRightToMistake] = useState(5)
   const [rightAnswer, setRightAnswer] = useState(0)
   const [answer, setAnswer] = useState([])
   const quizList = useRef()
+  const buttons = useRef()
+  const hangmanPerson = useRef()
 
   useEffect(()=>{
     let sum = answer.length>0?showTheNumber(answer, quizList.current.children, result):null
@@ -38,28 +40,30 @@ const Hangman = ({result})=> {
     }
   },[answer])
 
-  useEffect(()=>{
-    console.log(rightToMistake)
+  useEffect(()=>{ 
+    hangmanPerson.current.classList.add("hangman_procces"+rightToMistake)
     if (rightToMistake===0){
-      console.log('your dead')
+      buttons.current.classList.add('hangman_finish')
     }
   },[rightToMistake])
 
   useEffect(()=>{
     if (result.length === rightAnswer){
-      console.log('your win')
+      buttons.current.classList.add('hangman_finish')
     }
   },[rightAnswer])
 
   return (       
    <div className='container hangman'>
       <div className='hangman_canvas'>
+        <div className='hangman_canvas_container' ref={hangmanPerson}>
+        </div>
       </div>
       <div className='hangman_quiz'>
             <div className='hangman_quiz_input' ref={quizList}>
             { result.map((sym,ind)=><span className='hangman_quiz_input_symbal' key={ind}>Х</span>)}
             </div>
-            <div className='hangman_quiz_buttons'>
+            <div className='hangman_quiz_buttons' ref={buttons}>
               <div className='hangman_quiz_buttons_container'>                
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element'>1</span>
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element'>2</span>

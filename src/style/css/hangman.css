@@ -8,9 +8,13 @@
 }
 .hangman_canvas {
   height: 45%;
-  background-color: rgb(255, 227, 227);
+  background-color: rgb(255, 255, 255);
   -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
           box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.hangman_canvas_container {
+  width: 100%;
+  height: 100%;
 }
 .hangman_quiz {
   height: 55%;
@@ -34,7 +38,6 @@
           justify-content: center;
 }
 .hangman_quiz_input_symbal {
-  margin: 1rem;
   font-size: 2rem;
   background: -o-repeating-linear-gradient(45deg, #333333, #333333 25px, #000000 25px, #000000 50px);
   background: repeating-linear-gradient(45deg, #333333, #333333 25px, #000000 25px, #000000 50px);
@@ -112,4 +115,35 @@
 
 .hangman_predicted {
   background: gold;
+  color: black;
+  text-shadow: 0 0 2px #fff, -1px -1px 0 hsl(80deg, 70%, 35%), -1px -1px 1px hsl(80deg, 70%, 35%), -1px -1px 1px hsl(80deg, 10%, 15%);
+  font-size: 3rem;
+}
+
+.hangman_finish {
+  pointer-events: none;
+}
+
+.hangman_procces5 {
+  background: url("../../assets/image/5.jpg") bottom center/contain no-repeat;
+}
+
+.hangman_procces4 {
+  background: url("../../assets/image/4.jpg") bottom center/contain no-repeat;
+}
+
+.hangman_procces3 {
+  background: url("../../assets/image/3.jpg") bottom center/contain no-repeat;
+}
+
+.hangman_procces2 {
+  background: url("../../assets/image/2.jpg") bottom center/contain no-repeat;
+}
+
+.hangman_procces1 {
+  background: url("../../assets/image/1.jpg") bottom center/contain no-repeat;
+}
+
+.hangman_procces0 {
+  background: url("../../assets/image/0.jpg") bottom center/contain no-repeat;
 }

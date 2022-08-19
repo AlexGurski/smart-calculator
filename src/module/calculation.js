@@ -65,6 +65,6 @@ const plusAndMinus = (string)=>{
 export const calculating = (response) =>{
     let string = response[response.length-1]==='×' || response[response.length-1]==='+' || response[response.length-1]==='/' || response[response.length-1]==='-'?response.slice(0,response.length-1):response
     string = plusAndMinus(multiplyAndDivideAll(string)).split('.')    
-    return string[1]==='00000' || string[1]===undefined?string[0]:+string[0]+'.'+string[1]
+    return string[1]==='00000' || string[1]===undefined?string[0]:+string[0]+'.'+string[1].replace(/0*$/,"")
 }
 
