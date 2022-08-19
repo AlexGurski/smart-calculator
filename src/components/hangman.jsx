@@ -82,9 +82,7 @@ const Hangman = ({result})=> {
               </div>
             </div>          
       </div>    
-   </div>
-   
-
+   </div>  
   );
 }
 

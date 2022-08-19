@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.85a1ee6c.css",
-    "main.js": "/static/js/main.2bd21191.js",
-    "static/media/19635.ttf": "/static/media/19635.1ab7fb3238a0099dcb03.ttf",
-    "static/media/5.jpg": "/static/media/5.b3b44f70cd1be6941239.jpg",
-    "static/media/0.jpg": "/static/media/0.c84c3798f62d33bbf1c4.jpg",
-    "static/media/1.jpg": "/static/media/1.82b399581ffb0e7b15ee.jpg",
-    "static/media/2.jpg": "/static/media/2.2150dd6c45c444719323.jpg",
-    "static/media/3.jpg": "/static/media/3.4a4a0ff0614ed6e3bb40.jpg",
-    "static/media/4.jpg": "/static/media/4.d11d3d025d434746c642.jpg",
-    "static/media/digital.ttf": "/static/media/digital.93911ab167c943140756.ttf",
-    "index.html": "/index.html",
-    "main.85a1ee6c.css.map": "/static/css/main.85a1ee6c.css.map",
-    "main.2bd21191.js.map": "/static/js/main.2bd21191.js.map"
+    "main.css": "/smart-calculator/static/css/main.7c296d25.css",
+    "main.js": "/smart-calculator/static/js/main.2bd21191.js",
+    "static/media/19635.ttf": "/smart-calculator/static/media/19635.1ab7fb3238a0099dcb03.ttf",
+    "static/media/5.jpg": "/smart-calculator/static/media/5.b3b44f70cd1be6941239.jpg",
+    "static/media/0.jpg": "/smart-calculator/static/media/0.c84c3798f62d33bbf1c4.jpg",
+    "static/media/1.jpg": "/smart-calculator/static/media/1.82b399581ffb0e7b15ee.jpg",
+    "static/media/2.jpg": "/smart-calculator/static/media/2.2150dd6c45c444719323.jpg",
+    "static/media/3.jpg": "/smart-calculator/static/media/3.4a4a0ff0614ed6e3bb40.jpg",
+    "static/media/4.jpg": "/smart-calculator/static/media/4.d11d3d025d434746c642.jpg",
+    "static/media/digital.ttf": "/smart-calculator/static/media/digital.93911ab167c943140756.ttf",
+    "index.html": "/smart-calculator/index.html",
+    "main.7c296d25.css.map": "/smart-calculator/static/css/main.7c296d25.css.map",
+    "main.2bd21191.js.map": "/smart-calculator/static/js/main.2bd21191.js.map"
   },
   "entrypoints": [
-    "static/css/main.85a1ee6c.css",
+    "static/css/main.7c296d25.css",
     "static/js/main.2bd21191.js"
   ]
 }
