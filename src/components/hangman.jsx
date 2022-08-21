@@ -23,7 +23,7 @@ const showTheNumber = (answer, HTMLelement, array) =>{
 }
 
 const Hangman = ({result})=> {
-  console.log(result.join('')==="Infinity")
+  
   const [rightToMistake, setRightToMistake] = useState(5)
   const [rightAnswer, setRightAnswer] = useState(0)
   const [answer, setAnswer] = useState([])
@@ -43,6 +43,7 @@ const Hangman = ({result})=> {
 
   useEffect(()=>{ 
     hangmanPerson.current.classList.add("hangman_procces"+rightToMistake)
+   
     if (rightToMistake===0){
       dead.current.style.opacity=1;   
       dead.current.classList.add('hangman_dead')
@@ -51,6 +52,10 @@ const Hangman = ({result})=> {
   },[rightToMistake])
 
   useEffect(()=>{
+    if (result.join('')==="division by zero"){
+      setRightToMistake(0);
+      showTheNumber([true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true ],quizList.current.children, result)
+    }
     if (result.length === rightAnswer){
       dead.current.style.opacity=1; 
       dead.current.classList.add('hangman_kind')

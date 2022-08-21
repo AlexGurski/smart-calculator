@@ -10,9 +10,9 @@ const multiplyOrDivide = (string, ind) =>{
     let left = betweenLeft(string.slice(0,ind))
     let right = betweenRight(string.slice(ind+1))
     if (string[ind]==='/'){
-        return string.replace(left+'/'+right, (left/right).toFixed(5))
+        return string.replace(left+'/'+right, (left/right).toFixed(3))
     } else{
-        return string.replace(left+'×'+right, (left*right).toFixed(5))
+        return string.replace(left+'×'+right, (left*right).toFixed(3))
     }
 }
 const multiplyAndDivideAll = (string)=>{
@@ -37,9 +37,9 @@ const plusOrMinus = (string, ind) => {
     let left = betweenLeft(string.slice(0,ind))
     let right = betweenRight(string.slice(ind+1))
     if (string[ind]==='+'){
-        return string.replace(left+'+'+right, (+left + +right).toFixed(5))
+        return string.replace(left+'+'+right, (+left + +right).toFixed(3))
     } else{
-        return string.replace(left+'-'+right, (left-right).toFixed(5))
+        return string.replace(left+'-'+right, (left-right).toFixed(3))
     }
 }
 const plusAndMinus = (string)=>{
@@ -63,8 +63,14 @@ const plusAndMinus = (string)=>{
 }
 
 export const calculating = (response) =>{
+    
     let string = response[response.length-1]==='×' || response[response.length-1]==='+' || response[response.length-1]==='/' || response[response.length-1]==='-'?response.slice(0,response.length-1):response
-    string = plusAndMinus(multiplyAndDivideAll(string)).split('.')    
-    return string[1]==='00000' || string[1]===undefined?string[0]:+string[0]+'.'+string[1].replace(/0*$/,"")
+    
+    string = plusAndMinus(multiplyAndDivideAll(string)).split('.')  
+    //console.log(string)  
+    if (string[0]==='Infinity'){
+        return "division by zero"
+    }
+    return string[1]==='000' || string[1]===undefined?string[0]:+string[0]+'.'+string[1].replace(/0*$/,"")
 }
 
