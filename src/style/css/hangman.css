@@ -105,8 +105,6 @@
 .hangman_final {
   font-size: 5.5rem;
   text-align: center;
-  pointer-events: none;
-  padding: 0.5rem 1rem;
   opacity: 0;
   height: 6rem;
   border-width: 3px 3px 5px 5px;
@@ -161,11 +159,31 @@
   color: green;
   font-family: "kind";
   border: 3px solid green;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.hangman_kind:hover {
+  background-color: #a3a3a3;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .hangman_dead {
   color: red;
   font-family: "dead";
   border: 3px solid red;
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.hangman_dead:hover {
+  background-color: #a3a3a3;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .hangman_closed {

@@ -11,8 +11,7 @@
         box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
         &_container{
             width: 100%;
-            height: 100%;
-        
+            height: 100%;        
         }
     }
     &_quiz{
@@ -76,9 +75,7 @@
     }
    &_final{    
     font-size: 5.5rem;
-    text-align: center;
-    pointer-events: none;
-    padding: 0.5rem 1rem;
+    text-align: center;    
     opacity: 0;
     height: 6rem;
     border-width: 3px 3px 5px 5px;
@@ -117,11 +114,25 @@
     color:green;
     font-family: 'kind';
     border: 3px solid green;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover{
+        background-color: #a3a3a3;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
    }
    &_dead{
     color:red;
     font-family: 'dead';
     border: 3px solid red;
+    opacity: 1;
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover{
+        background-color: #a3a3a3;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
    }
 }
 

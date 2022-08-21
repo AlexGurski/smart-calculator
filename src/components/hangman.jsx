@@ -22,7 +22,7 @@ const showTheNumber = (answer, HTMLelement, array) =>{
   return rez
 }
 
-const Hangman = ({result})=> {
+const Hangman = ({result, toCalculator})=> {
   
   const [rightToMistake, setRightToMistake] = useState(5)
   const [rightAnswer, setRightAnswer] = useState(0)
@@ -42,10 +42,9 @@ const Hangman = ({result})=> {
   },[answer])
 
   useEffect(()=>{ 
-    hangmanPerson.current.classList.add("hangman_procces"+rightToMistake)
-   
+    hangmanPerson.current.classList.add("hangman_procces"+rightToMistake)   
     if (rightToMistake===0){
-      dead.current.style.opacity=1;   
+        
       dead.current.classList.add('hangman_dead')
       buttons.current.classList.add('hangman_finish')
     }
@@ -57,7 +56,7 @@ const Hangman = ({result})=> {
       showTheNumber([true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true ],quizList.current.children, result)
     }
     if (result.length === rightAnswer){
-      dead.current.style.opacity=1; 
+      
       dead.current.classList.add('hangman_kind')
       buttons.current.classList.add('hangman_finish')
     }
@@ -91,7 +90,7 @@ const Hangman = ({result})=> {
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element '>-</span>
               </div>
             </div>
-            <div className='hangman_final' ref={dead}> NEW CALCULATION</div>             
+            <div className='hangman_final' ref={dead} onClick={()=>toCalculator('')}> NEW CALCULATION</div>             
       </div>
        
    </div>  

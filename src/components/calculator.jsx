@@ -13,11 +13,6 @@ export const Calculator = ({calulatorResult})=> {
   const [calc,setCalc] = useState(false)
   const [input,setInput] = useState("")
 
-  useEffect(()=>{
-    console.log(inputContainer.current.offsetWidth)
-  },[input])
- 
-
   return (   
     <div className="calculator container">
       <div className='calculator_title'>
