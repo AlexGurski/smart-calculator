@@ -47,6 +47,7 @@
         cursor: default;
         transition: all 0.5s;
         justify-content: right;
+        background-color: grey;
     }
     &_keyboard{       
         margin-top: 2rem;
@@ -58,9 +59,6 @@
         font-family: 'keyboard';
         .key-number{
             background-color: rgb(231, 228, 16);
-        }
-        .key-on{
-            background-color: rgba(2, 54, 2, 0.486);
         }
         .key-equal{
             background-color: white;
@@ -90,8 +88,4 @@
             }
         }
     }
-}
-.input-on{
-    transition: all 0.5s;
-    background-color: grey;
 }
