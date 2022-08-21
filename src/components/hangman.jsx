@@ -23,7 +23,7 @@ const showTheNumber = (answer, HTMLelement, array) =>{
 }
 
 const Hangman = ({result})=> {
-//  console.log(result)
+  console.log(result.join('')==="Infinity")
   const [rightToMistake, setRightToMistake] = useState(5)
   const [rightAnswer, setRightAnswer] = useState(0)
   const [answer, setAnswer] = useState([])
@@ -44,13 +44,16 @@ const Hangman = ({result})=> {
   useEffect(()=>{ 
     hangmanPerson.current.classList.add("hangman_procces"+rightToMistake)
     if (rightToMistake===0){
-      dead.current.style.opacity=1;
+      dead.current.style.opacity=1;   
+      dead.current.classList.add('hangman_dead')
       buttons.current.classList.add('hangman_finish')
     }
   },[rightToMistake])
 
   useEffect(()=>{
     if (result.length === rightAnswer){
+      dead.current.style.opacity=1; 
+      dead.current.classList.add('hangman_kind')
       buttons.current.classList.add('hangman_finish')
     }
   },[rightAnswer])
@@ -83,7 +86,7 @@ const Hangman = ({result})=> {
                 <span onClick={(e)=>{setAnswer(buttonClick(e.target,result))}} className='hangman_quiz_buttons_element '>-</span>
               </div>
             </div>
-            <div className='hangman_dead' ref={dead}> YOUR DEAD</div>             
+            <div className='hangman_final' ref={dead}> NEW CALCULATION</div>             
       </div>
        
    </div>  

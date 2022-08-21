@@ -102,38 +102,70 @@
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+.hangman_final {
+  font-size: 5.5rem;
+  text-align: center;
+  pointer-events: none;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  height: 6rem;
+  border-width: 3px 3px 5px 5px;
+  border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+  -webkit-transform: rotate(1deg);
+      -ms-transform: rotate(1deg);
+          transform: rotate(1deg);
+  font-family: "kind";
+}
+@media screen and (max-width: 533px) {
+  .hangman_final {
+    font-size: 5.2rem;
+  }
+}
+@media screen and (max-width: 507px) {
+  .hangman_final {
+    font-size: 4.8rem;
+  }
+}
+@media screen and (max-width: 475px) {
+  .hangman_final {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 449px) {
+  .hangman_final {
+    font-size: 4.2rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .hangman_final {
+    padding: 0.4rem 0.7rem;
+    font-size: 3.6rem;
+    border: 2px solid red;
+  }
+}
+@media screen and (max-width: 367px) {
+  .hangman_final {
+    font-size: 3rem;
+    padding: 0.4rem 0.6rem;
+    border: 2px solid red;
+  }
+}
+@media screen and (max-width: 315px) {
+  .hangman_final {
+    font-size: 2.5rem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid red;
+  }
+}
+.hangman_kind {
+  color: green;
+  font-family: "kind";
+  border: 3px solid green;
+}
 .hangman_dead {
   color: red;
   font-family: "dead";
-  font-size: 9rem;
-  text-align: center;
-  pointer-events: none;
-  opacity: 0;
-}
-@media screen and (max-width: 500px) {
-  .hangman_dead {
-    font-size: 8rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  .hangman_dead {
-    font-size: 7rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .hangman_dead {
-    font-size: 6rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .hangman_dead {
-    font-size: 5.5rem;
-  }
-}
-@media screen and (max-width: 325px) {
-  .hangman_dead {
-    font-size: 5rem;
-  }
+  border: 3px solid red;
 }
 
 .hangman_closed {
